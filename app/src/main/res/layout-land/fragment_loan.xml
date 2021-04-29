@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_loan_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey400"
+    tools:context=".LoanFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fragment_loan_card_view_fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGrey"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingStart="60dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/fragment_loan_price_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="@color/colorBlack"
+                android:textAlignment="textEnd"
+                android:textColorHint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_loan_price_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_loan_price_edit_text" />
+
+            <EditText
+                android:id="@+id/fragment_loan_price_edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_loan_duration_text_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/fragment_loan_contribution_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loan_contribution"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_loan_contribution_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_loan_contribution_edit_text" />
+
+            <EditText
+                android:id="@+id/fragment_loan_contribution_edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_loan_duration_text_view"
+                app:layout_constraintTop_toBottomOf="@id/fragment_loan_price_edit_text"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/fragment_loan_rate_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interest rate (%)"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_loan_rate_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_loan_rate_edit_text" />
+
+            <EditText
+                android:id="@+id/fragment_loan_rate_edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_loan_duration_text_view"
+                app:layout_constraintTop_toBottomOf="@id/fragment_loan_contribution_edit_text" />
+
+            <TextView
+                android:id="@+id/fragment_loan_duration_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration (in years)"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_loan_duration_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_loan_duration_edit_text" />
+
+            <EditText
+                android:id="@+id/fragment_loan_duration_edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_loan_duration_text_view"
+                app:layout_constraintTop_toBottomOf="@id/fragment_loan_rate_edit_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/fragment_loan_ok_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:text="Simulate my loan"
+        android:layout_margin="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loan_card_view_fields"/>
+
+    <TextView
+        android:id="@+id/fragment_loan_monthly_payment_text_view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="80dp"
+        android:background="@color/colorLightGrey"
+        android:text="The monthly payment will be : "
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loan_ok_btn" />
+
+    <TextView
+        android:id="@+id/fragment_loan_result_text_view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:background="@color/colorLightGrey"
+        android:hint="Result of the loan"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/fragment_loan_monthly_payment_text_view"
+        app:layout_constraintTop_toBottomOf="@id/fragment_loan_ok_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
