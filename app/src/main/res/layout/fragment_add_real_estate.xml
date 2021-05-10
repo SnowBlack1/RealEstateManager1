@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_real_estate_fragment_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRealEstateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrey400">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_property_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_ToTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/add_fragment_market_date_img"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/ic_calendar_24"
+                    app:layout_constraintBottom_toBottomOf="@id/add_frag_market_date_edit_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/add_frag_market_date_edit_text" />
+
+                <EditText
+                    android:id="@+id/add_frag_market_date_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:focusable="false"
+                    android:hint="@string/on_market_add_frag"
+                    android:importantForAutofill="no"
+                    android:inputType="date"
+                    android:textColorHint="@color/colorBlack"
+                    android:text="BONJOUR"
+                    app:layout_constraintStart_toEndOf="@id/add_fragment_market_date_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/add_frag_sold_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sold on"
+                    app:layout_constraintBottom_toBottomOf="@id/add_frag_sold_date_edit_text"
+                    app:layout_constraintEnd_toStartOf="@id/add_frag_sold_date_edit_text"
+                    app:layout_constraintHorizontal_bias="0.243"
+                    app:layout_constraintStart_toEndOf="@id/add_frag_market_date_edit_text"
+                    app:layout_constraintTop_toTopOf="@id/add_frag_sold_date_edit_text" />
+
+                <EditText
+                    android:id="@+id/add_frag_sold_date_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="Sell date"
+                    android:importantForAutofill="no"
+                    android:inputType="date"
+                    android:textColorHint="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/add_frag_agent_img"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_person_24"
+                    app:layout_constraintBottom_toBottomOf="@id/frag_re_add_edit_et_agent_last_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/frag_re_add_edit_et_agent_last_name" />
+
+                <EditText
+                    android:id="@+id/frag_re_add_edit_et_agent_last_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Last name"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorBlack"
+                    app:layout_constraintStart_toEndOf='@id/add_frag_agent_img'
+                    app:layout_constraintTop_toBottomOf="@id/add_frag_market_date_edit_text" />
+
+                <EditText
+                    android:id="@+id/frag_re_add_edit_et_agent_first_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="First name"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/frag_re_add_edit_et_agent_last_name"
+                    app:layout_constraintTop_toBottomOf="@id/add_frag_market_date_edit_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

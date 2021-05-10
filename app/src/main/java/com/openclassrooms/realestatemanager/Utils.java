@@ -1,7 +1,10 @@
 package com.openclassrooms.realestatemanager;
 
 import android.content.Context;
-import android.net.wifi.WifiManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -38,7 +41,7 @@ public class Utils {
      * @return
      */
     public static String getTodayDate(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");//"dd/MM/yyyy"
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         return dateFormat.format(new Date());
     }
 
@@ -48,8 +51,32 @@ public class Utils {
      * @param context
      * @return
      */
-    public static Boolean isInternetAvailable(Context context){
-        WifiManager wifi = (WifiManager)context.getSystemService(Context.WIFI_SERVICE); // identifier aussi si il y a internet mobile !!!
-        return wifi.isWifiEnabled();
+    public static Boolean isInternetAvailable(Context context, String TAG){
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeInfo = null;
+        boolean wifiConnected = false;
+        boolean mobileConnected = false;
+        boolean isNetworkAvailable = false;
+        if (connectivityManager != null) {
+            activeInfo = connectivityManager.getActiveNetworkInfo();
+        }
+
+        if (activeInfo != null && activeInfo.isConnected()) {
+            wifiConnected = activeInfo.getType() == ConnectivityManager.TYPE_WIFI;
+            mobileConnected = activeInfo.getType() == ConnectivityManager.TYPE_MOBILE;
+            if (wifiConnected) {
+                Log.i(TAG, "Wifi connection");
+                Toast.makeText(context, "Wifi connection is available", Toast.LENGTH_SHORT).show();
+            } else if (mobileConnected) {
+                Log.i(TAG, "Mobile connection");
+                Toast.makeText(context, "Mobile connection is available", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Log.i(TAG, "No wifi or mobile connection");
+        }
+        isNetworkAvailable = (wifiConnected || mobileConnected);
+
+        return isNetworkAvailable;
     }
 }

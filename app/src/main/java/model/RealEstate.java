@@ -27,8 +27,7 @@ public class RealEstate {
     private Date reEstateOnMarketDate;
     @Nullable
     private Date reEstateSaleDate;
-    private String reEstateAgentLastName;
-    private String reEstateAgentFirstName;
+
 
     public RealEstate(){}
 
@@ -36,8 +35,7 @@ public class RealEstate {
                       int reEstateNbRooms, int reEstateNbBedrooms, int reEstateBathrooms,
                       String reEstateDescription, int reEstateNbPhoto, String reEstatePhotoDescription,
                       String reEstateAddress, String reEstatePtInterest, boolean reEstateIsSold,
-                      @Nullable Date reEstateOnMarketDate, @Nullable Date reEstateSaleDate,
-                      String reEstateAgentLastName, String reEstateAgentFirstName) {
+                      @Nullable Date reEstateOnMarketDate, @Nullable Date reEstateSaleDate) {
         this.reEstateId = reEstateId;
         this.reEstateType = reEstateType;
         this.reEstatePrice = reEstatePrice;
@@ -53,15 +51,13 @@ public class RealEstate {
         this.reEstateIsSold = reEstateIsSold;
         this.reEstateOnMarketDate = reEstateOnMarketDate;
         this.reEstateSaleDate = reEstateSaleDate;
-        this.reEstateAgentLastName = reEstateAgentLastName;
-        this.reEstateAgentFirstName = reEstateAgentFirstName;
     }
 
     public RealEstate(String reEstateType, float reEstatePrice, int reEstateSurface, int reEstateNbRooms,
                       int reEstateNbBedrooms, int reEstateBathrooms, String reEstateDescription,
                       int reEstateNbPhoto, String reEstatePhotoDescription, String reEstateAddress,
                       String reEstatePtInterest, boolean reEstateIsSold, @Nullable Date reEstateOnMarketDate,
-                      @Nullable Date reEstateSaleDate, String reEstateAgentLastName, String reEstateAgentFirstName) {
+                      @Nullable Date reEstateSaleDate) {
         this.reEstateType = reEstateType;
         this.reEstatePrice = reEstatePrice;
         this.reEstateSurface = reEstateSurface;
@@ -76,8 +72,7 @@ public class RealEstate {
         this.reEstateIsSold = reEstateIsSold;
         this.reEstateOnMarketDate = reEstateOnMarketDate;
         this.reEstateSaleDate = reEstateSaleDate;
-        this.reEstateAgentLastName = reEstateAgentLastName;
-        this.reEstateAgentFirstName = reEstateAgentFirstName;
+
     }
 
 
@@ -203,19 +198,4 @@ public class RealEstate {
         this.reEstateSaleDate = reEstateSaleDate;
     }
 
-    public String getReEstateAgentLastName() {
-        return reEstateAgentLastName;
-    }
-
-    public void setReEstateAgentLastName(String reEstateAgentLastName) {
-        this.reEstateAgentLastName = reEstateAgentLastName;
-    }
-
-    public String getReEstateAgentFirstName() {
-        return reEstateAgentFirstName;
-    }
-
-    public void setReEstateAgentFirstName(String reEstateAgentFirstName) {
-        this.reEstateAgentFirstName = reEstateAgentFirstName;
-    }
 }
