@@ -10,6 +10,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static android.widget.Toast.makeText;
+
 /**
  * Created by Philippe on 21/02/2018.
  */
@@ -67,10 +69,10 @@ public class Utils {
             mobileConnected = activeInfo.getType() == ConnectivityManager.TYPE_MOBILE;
             if (wifiConnected) {
                 Log.i(TAG, "Wifi connection");
-                Toast.makeText(context, "Wifi connection is available", Toast.LENGTH_SHORT).show();
+                makeText(context, "Wifi connection is available", Toast.LENGTH_SHORT).show();
             } else if (mobileConnected) {
                 Log.i(TAG, "Mobile connection");
-                Toast.makeText(context, "Mobile connection is available", Toast.LENGTH_SHORT).show();
+                makeText(context, "Mobile connection is available", Toast.LENGTH_SHORT).show();
             }
         } else {
             Log.i(TAG, "No wifi or mobile connection");

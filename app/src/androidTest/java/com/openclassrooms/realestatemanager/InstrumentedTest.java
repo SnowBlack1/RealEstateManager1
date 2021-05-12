@@ -8,6 +8,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static com.openclassrooms.realestatemanager.Utils.isInternetAvailable;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -17,7 +18,7 @@ import static org.junit.Assert.assertTrue;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class InstrumentedTest {
     @Test
     public void useAppContext() throws Exception {
         // Context of the app under test.
@@ -29,7 +30,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void useOfInternet() throws Exception {
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertTrue(Utils.isInternetAvailable(context, "TAG"));
+        assertTrue(isInternetAvailable(context, "TAG"));
     }
 
 }
