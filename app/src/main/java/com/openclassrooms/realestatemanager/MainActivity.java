@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewMain;
     private TextView textViewQuantity;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         this.configureTextViewQuantity();
     }
 
-    private void configureTextViewMain(){
+    private void configureTextViewMain() {
         this.textViewMain.setTextSize(15);
         this.textViewMain.setText(R.string.main_activity_text_view_1);
     }
 
-    private void configureTextViewQuantity(){
+    private void configureTextViewQuantity() {
         int quantity = Utils.convertDollarToEuro(100);
         //int quantity = Utils.convertEuroToDollar(100); //DELETE
         this.textViewQuantity.setTextSize(20);
