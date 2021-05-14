@@ -5,4 +5,7 @@
     <string name="loan_contribution">Contribution</string>
     <string name="main_activity_text_view_1">\"Le premier bien immobilier enregistré vaut \"</string>
     <string name="on_market_add_frag">On market</string>
+    <string name="location">Location</string>
+    <string name="street">Street</string>
+    <string name="agent_name">Last name</string>
 </resources>
