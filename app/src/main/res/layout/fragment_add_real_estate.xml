@@ -165,12 +165,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:hint="@string/street"
+                    android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
                     android:textColorHint="@color/colorBlack"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/add_frag_location_text_view"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toBottomOf="@id/add_frag_location_text_view" />
 
                 <EditText
                     android:id="@+id/add_frag_district_edit_text"
@@ -234,14 +234,158 @@
             android:id="@+id/description_property_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/add_frag_location_card_view"/>
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/add_frag_location_card_view">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/property_type_img_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_house_24"
+                    app:layout_constraintBottom_toBottomOf="@id/property_type_spinner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/property_type_spinner" />
 
+                <Spinner
+                    android:id="@+id/property_type_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:prompt="Property type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/property_type_img_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/property_surface_img_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_surface_24"
+                    app:layout_constraintBottom_toBottomOf="@id/property_surface_edit_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/property_surface_edit_text" />
+
+                <EditText
+                    android:id="@+id/property_surface_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Surface (in m²)"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    app:layout_constraintStart_toEndOf="@id/property_surface_img_view"
+                    app:layout_constraintTop_toBottomOf="@id/property_type_spinner" />
+
+                <ImageView
+                    android:id="@+id/property_price_img_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_price_24"
+                    app:layout_constraintBottom_toBottomOf="@id/property_price_edit_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/property_surface_img_view"
+                    app:layout_constraintTop_toTopOf="@id/property_price_edit_text" />
+
+                <EditText
+                    android:id="@+id/property_price_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Price"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    app:layout_constraintStart_toEndOf="@id/property_price_img_view"
+                    app:layout_constraintTop_toBottomOf="@id/property_type_spinner" />
+
+                <TextView
+                    android:id="@+id/number_rooms_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Number of"
+                    app:layout_constraintBottom_toBottomOf="@id/number_rooms_img_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/number_rooms_img_view" />
+
+                <ImageView
+                    android:id="@+id/number_rooms_img_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_house_24"
+                    app:layout_constraintBottom_toBottomOf="@id/number_rooms_spinner"
+                    app:layout_constraintStart_toStartOf="@id/property_price_img_view"
+                    app:layout_constraintTop_toTopOf="@id/number_rooms_spinner" />
+
+                <Spinner
+                    android:id="@+id/number_rooms_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:prompt="Rooms"
+                    app:layout_constraintStart_toEndOf="@id/number_rooms_img_view"
+                    app:layout_constraintTop_toBottomOf="@id/property_surface_edit_text" />
+
+                <ImageView
+                    android:id="@+id/nb_bedrooms_img_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bed_24"
+                    app:layout_constraintBottom_toBottomOf="@id/nb_bedrooms_spinner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/nb_bedrooms_spinner" />
+
+                <Spinner
+                    android:id="@+id/nb_bedrooms_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:prompt="Bedrooms"
+                    app:layout_constraintStart_toEndOf="@id/nb_bedrooms_img_view"
+                    app:layout_constraintTop_toBottomOf="@id/number_rooms_spinner" />
+
+                <ImageView
+                    android:id="@+id/frag_re_add_edit_img_bathroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bathtub_24"
+                    app:layout_constraintBottom_toBottomOf="@id/frag_re_add_edit_spin_bathrooms"
+                    app:layout_constraintStart_toStartOf="@id/property_price_img_view"
+                    app:layout_constraintTop_toTopOf="@id/frag_re_add_edit_spin_bathrooms" />
+
+                <Spinner
+                    android:id="@+id/frag_re_add_edit_spin_bathrooms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:prompt="Bathrooms"
+                    app:layout_constraintStart_toEndOf="@id/frag_re_add_edit_img_bathroom"
+                    app:layout_constraintTop_toBottomOf="@id/number_rooms_spinner" />
+
+                <ImageView
+                    android:id="@+id/frag_re_add_edit_img_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_description_24"
+                    app:layout_constraintBottom_toBottomOf="@id/frag_re_add_edit_et_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/frag_re_add_edit_et_description" />
+
+                <EditText
+                    android:id="@+id/frag_re_add_edit_et_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/frag_re_add_edit_img_description"
+                    app:layout_constraintTop_toBottomOf="@id/frag_re_add_edit_spin_bathrooms" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.core.widget.NestedScrollView>

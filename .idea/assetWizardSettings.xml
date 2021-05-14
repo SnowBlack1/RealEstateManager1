@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/image/baseline_image_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/insert_drive_file/baseline_insert_drive_file_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +33,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_image_24" />
+                            <entry key="outputName" value="ic_description_24" />
                             <entry key="sourceFile" value="C:\Users\aurel\Desktop\ParcoursAndroid2020\P9 - Real Estate Manager\RealEstateManager" />
                           </map>
                         </option>
