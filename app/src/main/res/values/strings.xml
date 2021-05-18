@@ -8,4 +8,11 @@
     <string name="location">Location</string>
     <string name="street">Street</string>
     <string name="agent_name">Last name</string>
+    <string name="description">Description</string>
+    <string name="sold_on">Sold on</string>
+    <string name="sell_date">Sell date</string>
+    <string name="district">District</string>
+    <string name="add_a_property">Add a property</string>
+    <string name="real_estate_pictures">Real estate pictures</string>
+    <string name="park">Park</string>
 </resources>

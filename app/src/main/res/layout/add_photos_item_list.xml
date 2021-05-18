@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_photos_item_list"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/property_photos_img_view_item_list"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_forbidden_24" />
+
+    <EditText
+        android:id="@+id/property_photo_description_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:hint="Photo description"
+        android:textSize="10sp"
+        android:textColorHint="@color/colorBlack"
+        android:inputType="text"
+        android:lines="3" />
+
+    <ImageButton
+        android:id="@+id/delete_photo_img_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:background="@color/colorWhite"
+        android:contentDescription="Photos"
+        android:focusable="true"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_delete_24" />
+
+
+</LinearLayout>
