@@ -8,7 +8,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static com.openclassrooms.realestatemanager.Utils.isInternetAvailable;
+import static com.openclassrooms.realestatemanager.utils.isInternetAvailable;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

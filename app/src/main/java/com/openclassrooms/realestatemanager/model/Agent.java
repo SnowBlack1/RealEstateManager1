@@ -1,4 +1,6 @@
-package model;
+package com.openclassrooms.realestatemanager.model;
+
+import android.content.ContentValues;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity(tableName = "agent")
- public class Agent {
+public class Agent {
 
     @PrimaryKey(autoGenerate = true)
     private long agentId;
@@ -15,15 +17,28 @@ import java.util.List;
     private String agentFirstName;
 
     public List<Agent> mAgentList = Arrays.asList(
-            new Agent(1,"Gardena","Felixan"),
-            new Agent(2,"Paprika","Yaki"),
-            new Agent(3,"Lilinen","Milkyway")
+            new Agent(1, "Gardena", "Felixan"),
+            new Agent(2, "Paprika", "Yaki"),
+            new Agent(3, "Lilinen", "Milkyway")
     );
+
+    public Agent() {
+    }
 
     public Agent(long agentId, String agentLastName, String agentFirstName) {
         this.agentId = agentId;
         this.agentLastName = agentLastName;
         this.agentFirstName = agentFirstName;
+    }
+
+    public static Agent fromContentValues(ContentValues agentValues) {
+        final Agent agent = new Agent();
+        if (agentValues.containsKey("agentId")) agent.setAgentId(agentValues.getAsLong("agentId"));
+        if (agentValues.containsKey("agentLastName"))
+            agent.setAgentLastName(agentValues.getAsString("agentLastName"));
+        if (agentValues.containsKey("agentFirstName"))
+            agent.setAgentFirstName(agentValues.getAsString("agentFirstName"));
+        return agent;
     }
 
 

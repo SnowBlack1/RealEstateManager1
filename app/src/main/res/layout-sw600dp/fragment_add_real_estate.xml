@@ -582,17 +582,19 @@
 
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="@color/colorBlack"
-            android:text="@string/add_a_property"
-            android:textColor="@color/colorWhite"
-            app:layout_constraintTop_toBottomOf="@id/property_photos_card_view"
-            tools:layout_editor_absoluteX="148dp"
-            tools:ignore="MissingConstraints"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorBlack"
+        android:text="@string/add_a_property"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/property_photos_card_view"
+        tools:layout_editor_absoluteX="148dp"
+        tools:ignore="MissingConstraints"/>
 
 
 </androidx.core.widget.NestedScrollView>

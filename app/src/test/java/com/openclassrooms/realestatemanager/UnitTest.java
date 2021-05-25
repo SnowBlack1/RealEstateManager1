@@ -8,8 +8,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.openclassrooms.realestatemanager.Utils.convertDollarToEuro;
-import static com.openclassrooms.realestatemanager.Utils.convertEuroToDollar;
+import static com.openclassrooms.realestatemanager.utils.convertDollarToEuro;
+import static com.openclassrooms.realestatemanager.utils.convertEuroToDollar;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)

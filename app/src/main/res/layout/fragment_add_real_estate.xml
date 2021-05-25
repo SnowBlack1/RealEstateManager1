@@ -5,7 +5,8 @@
     android:id="@+id/add_real_estate_fragment_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRealEstateFragment">
+    tools:context=".AddRealEstateFragment"
+    android:background="@color/colorGrey400">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -60,29 +61,30 @@
                     app:layout_constraintStart_toEndOf="@id/add_frag_market_date_text_view"
                     app:layout_constraintTop_toTopOf="@id/add_frag_sold_date_edit_text" />
 
+
                 <TextView
                     android:id="@+id/add_frag_sold_date_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
                     android:background="@null"
                     android:hint="@string/sell_date"
                     android:importantForAutofill="no"
                     android:textColorHint="@color/colorGrey400"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
+                    app:layout_constraintStart_toEndOf="@id/add_frag_sold_check_box"/>
 
                 <ImageView
                     android:id="@+id/add_frag_agent_img"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="15dp"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_person_24"
                     app:layout_constraintBottom_toBottomOf="@id/add_frag_spinner_agent_name"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/add_frag_spinner_agent_name" />
+                    app:layout_constraintTop_toTopOf="@+id/add_frag_spinner_agent_name"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Spinner
                     android:id="@+id/add_frag_spinner_agent_name"
@@ -90,6 +92,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/agent_name"
                     android:importantForAutofill="no"
+                    android:layout_marginTop="15dp"
                     android:inputType="text"
                     android:textColorHint="@color/colorBlack"
                     app:layout_constraintStart_toEndOf='@id/add_frag_agent_img'
@@ -140,7 +143,6 @@
                     android:id="@+id/img_location_img_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
                     android:layout_marginStart="6dp"
                     android:src="@drawable/ic_location_24"
                     app:layout_constraintStart_toStartOf="parent"
@@ -179,13 +181,13 @@
                     android:layout_marginTop="3dp"
                     android:background="@null"
                     android:hint="@string/district"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
                     android:textColor="@color/colorBlack"
                     android:textColorHint="@color/colorGrey400"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/add_frag_street_edit_text"
-                    android:importantForAutofill="no"
-                    android:inputType="text" />
+                    app:layout_constraintTop_toBottomOf="@id/add_frag_street_edit_text" />
 
                 <EditText
                     android:id="@+id/add_frag_city_edit_text"
@@ -285,6 +287,7 @@
                     android:layout_marginStart="3dp"
                     android:background="@null"
                     android:hint="Surface (in m²)"
+                    android:textColor="@color/colorBlack"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textColorHint="@color/colorGrey400"
@@ -303,13 +306,14 @@
 
                 <EditText
                     android:id="@+id/property_price_edit_text"
-                    android:layout_width="0dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:background="@null"
                     android:hint="Price"
                     android:importantForAutofill="no"
                     android:inputType="number"
+                    android:textColor="@color/colorBlack"
                     android:textColorHint="@color/colorGrey400"
                     app:layout_constraintStart_toEndOf="@id/property_price_img_view"
                     app:layout_constraintTop_toBottomOf="@id/property_type_spinner" />
@@ -347,6 +351,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
                     android:src="@drawable/ic_bed_24"
                     app:layout_constraintBottom_toBottomOf="@id/nb_bedrooms_spinner"
                     app:layout_constraintStart_toStartOf="parent"
@@ -382,6 +387,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
+                    android:layout_marginBottom="6dp"
                     android:src="@drawable/ic_description_24"
                     app:layout_constraintBottom_toBottomOf="@id/frag_re_add_edit_et_description"
                     app:layout_constraintStart_toStartOf="parent"
@@ -392,9 +398,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginBottom="10dp"
                     android:background="@android:color/transparent"
+                    android:textColor="@color/colorBlack"
                     android:hint="@string/description"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
@@ -501,7 +508,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
-                    android:text="Subway"
+                    android:text="@string/subway"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/pt_interest_school_checkbox" />
 
@@ -576,7 +583,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/select_photos_img_button"
-                    tools:listitem="@layout/add_photos_item_list"/>
+                    tools:listitem="@layout/add_photos_item_list" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -586,14 +593,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="24dp"
             android:background="@color/colorBlack"
             android:text="@string/add_a_property"
             android:textColor="@color/colorWhite"
-            app:layout_constraintTop_toBottomOf="@id/property_photos_card_view"
-            tools:layout_editor_absoluteX="148dp"
-            tools:ignore="MissingConstraints"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/property_photos_card_view" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.core.widget.NestedScrollView>

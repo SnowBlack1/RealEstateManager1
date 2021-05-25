@@ -1,8 +1,12 @@
-package model;
+package com.openclassrooms.realestatemanager.model;
+
+import android.content.ContentValues;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.openclassrooms.realestatemanager.utils.DateConverter;
 
 import java.util.Date;
 
@@ -52,7 +56,22 @@ public class RealEstate {
         this.reEstateOnMarketDate = reEstateOnMarketDate;
         this.reEstateSaleDate = reEstateSaleDate;
     }
-
+    public static RealEstate fromContentValues(ContentValues values){
+        final RealEstate realEstate = new RealEstate();
+        if (values.containsKey("reEstateId")) realEstate.setReEstateId(values.getAsLong("reEstateId"));
+        if (values.containsKey("reEstateType")) realEstate.setReEstateType(values.getAsString("reEstateType"));
+        if (values.containsKey("reEstatePrice")) realEstate.setReEstatePrice(values.getAsInteger("reEstatePrice"));
+        if (values.containsKey("reEstateSurface")) realEstate.setReEstateSurface(values.getAsInteger("reEstateSurface"));
+        if (values.containsKey("reEstateNbRooms")) realEstate.setReEstateNbRooms(values.getAsInteger("reEstateNbRooms"));
+        if (values.containsKey("reEstateNbBedrooms")) realEstate.setReEstateNbBedrooms(values.getAsInteger("reEstateNbBedrooms"));
+        if (values.containsKey("reEstateNbBathrooms")) realEstate.setReEstateBathrooms(values.getAsInteger("reEstateNbBathrooms"));
+        if (values.containsKey("reEstateDescription")) realEstate.setReEstateDescription(values.getAsString("reEstateDescription"));
+        if (values.containsKey("reEstateIsSold")) realEstate.setReEstateIsSold(values.getAsBoolean("reEstateIsSold"));
+        if (values.containsKey("reEstateSaleDate")) realEstate.setReEstateSaleDate(DateConverter.toDate(values.getAsLong("reEstateSaleDate")));
+        if (values.containsKey("reEstateOnMarketDate")) realEstate.setReEstateOnMarketDate(DateConverter.toDate(values.getAsLong("reEstateOnMarketDate")));
+        if (values.containsKey("reEstatePhotos")) realEstate.setReEstateNbPhoto(values.getAsInteger("reEstateNbPhoto"));
+        return realEstate;
+    }
     public RealEstate(String reEstateType, float reEstatePrice, int reEstateSurface, int reEstateNbRooms,
                       int reEstateNbBedrooms, int reEstateBathrooms, String reEstateDescription,
                       int reEstateNbPhoto, String reEstatePhotoDescription, String reEstateAddress,
@@ -74,6 +93,8 @@ public class RealEstate {
         this.reEstateSaleDate = reEstateSaleDate;
 
     }
+
+
 
 
     public long getReEstateId() {
