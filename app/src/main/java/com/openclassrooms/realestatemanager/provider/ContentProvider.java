@@ -10,13 +10,16 @@ import androidx.annotation.Nullable;
 
 import com.openclassrooms.realestatemanager.database.RealEstateDatabase;
 
+import com.openclassrooms.realestatemanager.model.Agent;
 import com.openclassrooms.realestatemanager.model.RealEstate;
 
 public class ContentProvider extends android.content.ContentProvider {
 
     public static final String AUTHORITY = "com.openclassrooms.realestatemanager.provider";
     public static final String TABLE_NAME_REAL_ESTATE = RealEstate.class.getSimpleName();
-    public static final Uri URI_RE = Uri.parse("content://" + AUTHORITY + "/" + TABLE_NAME_REAL_ESTATE);
+    public static final String TABLE_NAME_AGENT = Agent.class.getSimpleName();
+    public static final Uri URI_REAL_ESTATE = Uri.parse("content://" + AUTHORITY + "/" + TABLE_NAME_REAL_ESTATE);
+    public static final Uri URI_AGENT = Uri.parse("content://" + AUTHORITY + "/" + TABLE_NAME_AGENT);
 
     @Override
     public boolean onCreate() {
@@ -27,8 +30,8 @@ public class ContentProvider extends android.content.ContentProvider {
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
         if (getContext() != null) {
-            long lReId = ContentUris.parseId(uri);
-            final Cursor cursor = RealEstateDatabase.getInstance(getContext()).RealEstateDao().selectRealEstateCursor(lReId);
+            long reEstateId = ContentUris.parseId(uri);
+            final Cursor cursor = RealEstateDatabase.getInstance(getContext()).mRealEstateDao().selectRealEstateWithCursor(reEstateId);
             cursor.setNotificationUri(getContext().getContentResolver(), uri);
             return cursor;
         }
@@ -45,7 +48,7 @@ public class ContentProvider extends android.content.ContentProvider {
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
         if (getContext() != null) {
-            final long id = RealEstateDatabase.getInstance(getContext()).ReDao().insertRealEstate(RealEstate.fromContentValues(values));
+            final long id = RealEstateDatabase.getInstance(getContext()).mRealEstateDao().insertRealEstate(RealEstate.fromContentValues(values));
             if (id != 0) {
                 getContext().getContentResolver().notifyChange(uri, null);
                 return ContentUris.withAppendedId(uri, id);
@@ -58,7 +61,7 @@ public class ContentProvider extends android.content.ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         if (getContext() != null) {
-            final int count = RealEstateDatabase.getInstance(getContext()).ReDao().deleteRealEstate(ContentUris.parseId(uri));
+            final int count = RealEstateDatabase.getInstance(getContext()).mRealEstateDao().deleteRealEstate(ContentUris.parseId(uri));
             getContext().getContentResolver().notifyChange(uri, null);
             return count;
         }

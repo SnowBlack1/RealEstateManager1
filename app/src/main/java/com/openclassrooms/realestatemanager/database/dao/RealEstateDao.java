@@ -20,7 +20,7 @@ public interface RealEstateDao {
     LiveData<List<RealEstate>> getAllRealEstates();
 
     @Query("SELECT * FROM RealEstate WHERE reEstateId = :reEstateId")
-    Cursor getRealEstateWithCursor (long reEstateId);
+    Cursor selectRealEstateWithCursor (long reEstateId);
 
     @Insert
     long insertRealEstate(RealEstate realEstate);
@@ -29,5 +29,5 @@ public interface RealEstateDao {
     int updateRealEstate(RealEstate realEstate);
 
     @Delete
-    int deleteRealEstate(RealEstate realEstate);
+    int deleteRealEstate(long realEstate);
 }
