@@ -29,5 +29,5 @@ public interface RealEstateDao {
     int updateRealEstate(RealEstate realEstate);
 
     @Delete
-    int deleteRealEstate(long realEstate);
+    long deleteRealEstate(RealEstate realEstate);
 }
